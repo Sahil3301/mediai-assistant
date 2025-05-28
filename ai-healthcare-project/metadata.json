@@ -1,0 +1,6 @@
+{
+  "name": "AI Healthcare Diagnostic Assistant",
+  "description": "An AI-powered platform for doctors to analyze patient medical data (scans, reports) and receive detailed insights and layman summaries. Powered by advanced AI models to assist in diagnostic workflows.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
