@@ -8,7 +8,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-page">
       {/* Hero Section with Medical Animation */}
-      <section className="bg-gradient-to-b from-primary-DEFAULT to-primary-dark text-white py-20 relative overflow-hidden">
+      <section className="hero-section py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="animate-pulse absolute top-10 left-10 w-20 h-20 rounded-full bg-white"></div>
           <div className="animate-pulse absolute top-40 right-20 w-16 h-16 rounded-full bg-white" style={{animationDelay: '0.5s'}}></div>
@@ -26,10 +26,10 @@ const LandingPage: React.FC = () => {
                 style={{animationDuration: '3s'}}
               />
             </div>
-            <h1 className="text-5xl font-bold mb-6 animate-fadeIn text-white drop-shadow-lg">
-              Welcome to <span className="text-accent-DEFAULT">MediAI Assistant</span>
+            <h1 className="text-5xl font-bold mb-6 animate-fadeIn">
+              Welcome to <span className="text-accent-light">MediAI Assistant</span>
             </h1>
-            <p className="text-xl mb-10 animate-slideUp text-white drop-shadow-md" style={{animationDelay: '0.3s'}}>
+            <p className="text-xl mb-10 animate-slideUp" style={{animationDelay: '0.3s'}}>
               Revolutionizing healthcare diagnostics with intelligent AI analysis. Get
               faster, more accurate insights from medical data to elevate patient care.
             </p>
@@ -45,7 +45,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Features Section with Medical Images */}
-      <section className="py-16 bg-white">
+      <section className="section-light py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -57,7 +57,7 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md transform transition hover:scale-105 hover:shadow-lg">
+            <div className="card p-6 transform transition hover:scale-105 hover:shadow-lg">
               <div className="w-full h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
@@ -66,7 +66,7 @@ const LandingPage: React.FC = () => {
                 />
               </div>
               <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </div>
@@ -76,7 +76,7 @@ const LandingPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md transform transition hover:scale-105 hover:shadow-lg">
+            <div className="card p-6 transform transition hover:scale-105 hover:shadow-lg">
               <div className="w-full h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
@@ -84,8 +84,8 @@ const LandingPage: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-12 h-12 bg-secondary-light rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
@@ -95,7 +95,7 @@ const LandingPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md transform transition hover:scale-105 hover:shadow-lg">
+            <div className="card p-6 transform transition hover:scale-105 hover:shadow-lg">
               <div className="w-full h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
@@ -103,8 +103,8 @@ const LandingPage: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-12 h-12 bg-accent-light rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
@@ -116,7 +116,7 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="mt-16 grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md">
+            <div className="section-medium p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">For Medical Professionals</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
@@ -151,19 +151,19 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-primary-light p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Latest Features</h3>
+            <div className="bg-primary-light p-8 rounded-lg shadow-md text-white">
+              <h3 className="text-2xl font-bold mb-4">Latest Features</h3>
               <div className="space-y-4">
                 <div className="flex items-center p-3 bg-white rounded-lg shadow-sm">
                   <div className="flex-shrink-0 mr-4">
                     <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                      <svg className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-6 w-6 text-primary-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-medium">Advanced Image Recognition</h4>
+                    <h4 className="font-medium text-gray-800">Advanced Image Recognition</h4>
                     <p className="text-sm text-gray-600">Detect patterns in medical scans with 98% accuracy</p>
                   </div>
                 </div>
@@ -171,13 +171,13 @@ const LandingPage: React.FC = () => {
                 <div className="flex items-center p-3 bg-white rounded-lg shadow-sm">
                   <div className="flex-shrink-0 mr-4">
                     <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
-                      <svg className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-6 w-6 text-secondary-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                       </svg>
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-medium">Real-time Research Integration</h4>
+                    <h4 className="font-medium text-gray-800">Real-time Research Integration</h4>
                     <p className="text-sm text-gray-600">Access the latest medical research during analysis</p>
                   </div>
                 </div>
@@ -185,13 +185,13 @@ const LandingPage: React.FC = () => {
                 <div className="flex items-center p-3 bg-white rounded-lg shadow-sm">
                   <div className="flex-shrink-0 mr-4">
                     <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-6 w-6 text-accent-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                       </svg>
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-medium">Multi-language Patient Summaries</h4>
+                    <h4 className="font-medium text-gray-800">Multi-language Patient Summaries</h4>
                     <p className="text-sm text-gray-600">Provide explanations in the patient's preferred language</p>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="section-medium py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -222,10 +222,10 @@ const LandingPage: React.FC = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="card p-6">
               <div className="flex items-center mb-4">
                 <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                  <span className="text-blue-600 font-bold">DR</span>
+                  <span className="text-primary-DEFAULT font-bold">DR</span>
                 </div>
                 <div>
                   <h4 className="font-bold">Dr. Rebecca Chen</h4>
@@ -254,10 +254,10 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="card p-6">
               <div className="flex items-center mb-4">
                 <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
-                  <span className="text-green-600 font-bold">JM</span>
+                  <span className="text-secondary-DEFAULT font-bold">JM</span>
                 </div>
                 <div>
                   <h4 className="font-bold">Dr. James Miller</h4>
@@ -286,10 +286,10 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="card p-6">
               <div className="flex items-center mb-4">
                 <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                  <span className="text-purple-600 font-bold">SP</span>
+                  <span className="text-accent-DEFAULT font-bold">SP</span>
                 </div>
                 <div>
                   <h4 className="font-bold">Dr. Sarah Patel</h4>
@@ -322,10 +322,10 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-dark to-secondary-DEFAULT text-white">
+      <section className="section-dark py-20 bg-gradient-to-r from-primary-dark to-secondary-DEFAULT">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white drop-shadow-lg">Ready to Transform Your Practice?</h2>
-          <p className="text-xl mb-10 max-w-3xl mx-auto text-white drop-shadow-md">
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Practice?</h2>
+          <p className="text-xl mb-10 max-w-3xl mx-auto">
             Join thousands of healthcare professionals already using MediAI Assistant to improve patient care and streamline diagnostics.
           </p>
           <Link to={RoutePath.Dashboard}>
