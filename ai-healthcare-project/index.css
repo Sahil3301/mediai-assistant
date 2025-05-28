@@ -55,19 +55,32 @@ code {
   animation: slideUp 1s ease-in-out;
 }
 
-/* Custom color variables */
+/* NEW COLOR PALETTE - High Contrast Medical Theme */
 :root {
-  --color-primary-light: #e6f0ff;
-  --color-primary-DEFAULT: #3b82f6;
-  --color-primary-dark: #1d4ed8;
+  /* Primary colors - Deep blue */
+  --color-primary-light: #4a7dbd;
+  --color-primary-DEFAULT: #1a56a8;
+  --color-primary-dark: #0a3b7c;
   
-  --color-secondary-light: #e6f7ff;
-  --color-secondary-DEFAULT: #0ea5e9;
-  --color-secondary-dark: #0369a1;
+  /* Secondary colors - Teal */
+  --color-secondary-light: #4ecdc4;
+  --color-secondary-DEFAULT: #2ca8a0;
+  --color-secondary-dark: #1a7c76;
   
-  --color-accent-light: #fef9c3;
-  --color-accent-DEFAULT: #facc15;
-  --color-accent-dark: #ca8a04;
+  /* Accent colors - Vibrant orange */
+  --color-accent-light: #ff9f43;
+  --color-accent-DEFAULT: #ee5a24;
+  --color-accent-dark: #d63031;
+  
+  /* Background colors */
+  --color-bg-light: #ffffff;
+  --color-bg-medium: #edf2f7;
+  --color-bg-dark: #2d3748;
+  
+  /* Text colors */
+  --color-text-light: #ffffff;
+  --color-text-dark: #1a202c;
+  --color-text-muted: #718096;
 }
 
 /* Container styles */
@@ -85,16 +98,46 @@ code {
   min-height: 100vh;
 }
 
+/* Hero section with new high-contrast styling */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-DEFAULT));
+  color: var(--color-text-light);
+  position: relative;
+}
+
+.hero-section h1, 
+.hero-section h2, 
+.hero-section p {
+  color: var(--color-text-light);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 2;
+}
+
 /* Fix for white screen issues */
 .landing-page, .dashboard-page {
-  background-color: #f5f7fa;
+  background-color: var(--color-bg-medium);
   min-height: 80vh;
   width: 100%;
 }
 
 /* Ensure QR code is large and visible */
 .donation-box img {
-  min-width: 300px !important;
+  min-width: 350px !important;
   height: auto !important;
 }
 
@@ -113,7 +156,7 @@ code {
   }
   
   .donation-box img {
-    min-width: 250px !important;
+    min-width: 280px !important;
   }
 }
 
@@ -125,9 +168,9 @@ button {
 /* Ensure Generate Analysis button is always visible */
 button:has(span:contains('Generate Analysis')),
 button:contains('Generate Analysis') {
-  background-color: #3b82f6 !important;
+  background-color: var(--color-accent-DEFAULT) !important;
   color: white !important;
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25) !important;
+  box-shadow: 0 4px 6px rgba(238, 90, 36, 0.3) !important;
 }
 
 /* Hover effects for all buttons */
@@ -139,4 +182,40 @@ button:hover {
 /* Active button effects */
 button:active {
   transform: translateY(1px);
+}
+
+/* High contrast text elements */
+.text-high-contrast {
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* Section backgrounds */
+.section-light {
+  background-color: var(--color-bg-light);
+}
+
+.section-medium {
+  background-color: var(--color-bg-medium);
+}
+
+.section-dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+/* Card styling */
+.card {
+  background-color: var(--color-bg-light);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
 }
