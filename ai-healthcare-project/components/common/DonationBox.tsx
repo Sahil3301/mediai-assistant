@@ -6,7 +6,7 @@ const DonationBox: React.FC = () => {
   return (
     <div className="donation-box relative">
       <button 
-        className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
+        className="flex items-center px-4 py-2 bg-gradient-to-r from-accent-light to-accent-DEFAULT text-white rounded-lg shadow-md hover:from-accent-DEFAULT hover:to-accent-dark transition-all duration-300"
         onMouseEnter={() => setShowQR(true)}
         onMouseLeave={() => setShowQR(false)}
         onClick={() => setShowQR(!showQR)}
@@ -19,21 +19,21 @@ const DonationBox: React.FC = () => {
       </button>
       
       {showQR && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" 
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" 
              onClick={() => setShowQR(false)}>
           <div className="bg-white p-8 rounded-lg shadow-xl border border-gray-200 max-w-md mx-auto" 
                onClick={(e) => e.stopPropagation()}>
             <div className="flex flex-col items-center">
-              <p className="text-lg font-medium text-gray-700 mb-4">Scan to donate</p>
+              <p className="text-lg font-medium text-gray-800 mb-4">Scan to donate</p>
               <div className="flex justify-center w-full">
                 <img 
                   src="/images/donation-qr.png" 
                   alt="Donation QR Code" 
                   className="w-full h-auto" 
-                  style={{ maxWidth: '350px', minWidth: '320px', aspectRatio: '1/1' }}
+                  style={{ maxWidth: '380px', minWidth: '350px', aspectRatio: '1/1' }}
                 />
               </div>
-              <p className="text-sm text-gray-500 mt-4">Thank you for supporting our work!</p>
+              <p className="text-sm text-gray-600 mt-4">Thank you for supporting our work!</p>
             </div>
           </div>
         </div>
