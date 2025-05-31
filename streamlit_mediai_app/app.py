@@ -1,7 +1,8 @@
 import streamlit as st
 import datetime
 import asyncio
-from services.gemini_service import analyze_medical_data, AnalysisResult
+import os # Import os
+from services.gemini_service import analyze_medical_data, AnalysisResult, API_KEY_ENV_VAR # Import API_KEY_ENV_VAR
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -10,6 +11,16 @@ st.set_page_config(
     initial_sidebar_state="auto", # Keep sidebar open on desktop, auto on mobile
     page_icon="🩺" # Added a page icon
 )
+
+# --- API Key Check ---
+api_key_available = bool(os.getenv(API_KEY_ENV_VAR))
+if not api_key_available:
+    st.error(f"🚨 **Critical Error:** The '{API_KEY_ENV_VAR}' environment variable is not set. "
+             "The application cannot connect to the AI service. Please set this environment variable "
+             "with your Gemini API key and restart the application. Refer to the README for setup instructions.")
+    # Optionally, you could disable parts of the UI or st.stop() here,
+    # but the service will also return an error, which will be handled.
+    # For now, a prominent error message is sufficient as the service handles the functional block.
 
 # --- Initialize Session State (if not already present) ---
 if 'is_loading' not in st.session_state:
@@ -74,7 +85,7 @@ use_grounding_input = st.checkbox(
 )
 
 # Generate Analysis Button
-if st.button("✨ Generate Analysis", key="generate_button"): # Added emoji to button
+if st.button("✨ Generate Analysis", key="generate_button", disabled=not api_key_available): # Disable button if API key not set
     if not patient_details_input and not uploaded_file:
         st.session_state.error_message = "Please provide patient details or upload a medical scan/report."
         st.session_state.analysis_done = True
@@ -91,17 +102,23 @@ if st.button("✨ Generate Analysis", key="generate_button"): # Added emoji to b
             print(f"File uploaded: {uploaded_file.name}")
 
         try:
+            # The service now handles the API key check internally too.
+            # If api_key_available is false here, the button is disabled,
+            # but this call would still be safe if button wasn't disabled.
             result = asyncio.run(analyze_medical_data(
                 patient_notes=patient_details_input,
                 use_search_grounding=use_grounding_input
             ))
             st.session_state.doctor_analysis = result['doctorAnalysis']
             st.session_state.layman_summary = result['laymanSummary']
-            if "Error:" in st.session_state.doctor_analysis:
+
+            # Check if the service itself returned an error (e.g. API key was missing for the service)
+            # This is a bit redundant if the button is disabled, but good for defense.
+            if "Error:" in st.session_state.doctor_analysis and not st.session_state.error_message:
                  st.session_state.error_message = st.session_state.doctor_analysis
         except Exception as e:
-            st.session_state.error_message = f"An unexpected error occurred: {str(e)}"
-            print(f"Exception during analysis: {e}")
+            st.session_state.error_message = f"An unexpected error occurred in app.py: {str(e)}"
+            print(f"Exception during analysis in app.py: {e}")
         finally:
             st.session_state.is_loading = False
 
